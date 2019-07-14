@@ -1,8 +1,8 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png" />
+  <v-app id="app">
+    <img alt="Vue logo" src="./assets/logo.png" width="120" class="center" />
     <Todos v-bind:todos="todos" />
-  </div>
+  </v-app>
 </template>
 
 <script>
@@ -24,7 +24,7 @@ export default {
         {
           id: 2,
           title: "Todo Two",
-          completed: true
+          completed: false
         },
         {
           id: 3,
@@ -43,7 +43,10 @@ export default {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+}
+
+.center {
+  display: block;
+  margin: 0 auto;
 }
 </style>
