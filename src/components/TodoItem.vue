@@ -4,6 +4,7 @@
       <input type="checkbox" v-on:change="markComplete" />
       {{ todo.title }}
       <v-btn fab dark small color="error">
+        <v-icon dark>remove</v-icon>
       </v-btn>
     </h1>
   </div>
