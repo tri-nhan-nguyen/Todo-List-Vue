@@ -12,6 +12,6 @@
 <script>
 export default {
   name: "NavigationDrawer",
-  props: ["drawerProps"],
-}
+  props: ["drawerProps"]
+};
 </script>

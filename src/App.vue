@@ -9,16 +9,19 @@
         Toggle Toolbar Dark
         <v-icon right>favorite</v-icon>
       </v-btn>
+      <AddTodo v-on:add-todo="addTodo"></AddTodo>
     </v-content>
     <Footer></Footer>
   </v-app>
 </template>
 
 <script>
-import Todos from "./components/Todos"
-import Toolbar from "./components/layout/Toolbar"
-import NavigationDrawer from "./components/layout/NavigationDrawer"
-import Footer from "./components/layout/Footer"
+import Todos from "./components/Todos";
+import Toolbar from "./components/layout/Toolbar";
+import NavigationDrawer from "./components/layout/NavigationDrawer";
+import Footer from "./components/layout/Footer";
+import AddTodo from "./components/AddTodo";
+import uuid from "uuid"
 
 export default {
   name: "app",
@@ -27,25 +30,16 @@ export default {
     Toolbar,
     NavigationDrawer,
     Footer,
+    AddTodo
   },
   data() {
     return {
       todos: [
         {
-          id: 1,
-          title: "Todo One",
+          id: uuid.v4(),
+          title: "A Sample Todo",
           completed: false
         },
-        {
-          id: 2,
-          title: "Todo Two",
-          completed: false
-        },
-        {
-          id: 3,
-          title: "Todo Three",
-          completed: false
-        }
       ],
       drawerProps: {
         model: false,
@@ -59,6 +53,9 @@ export default {
   methods: {
     deleteTodo(id) {
       this.todos = this.todos.filter(todo => todo.id != id);
+    },
+    addTodo(newTodo) {
+      this.todos = [...this.todos, newTodo];
     }
   }
 };
