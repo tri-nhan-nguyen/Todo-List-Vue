@@ -21,7 +21,7 @@ import Toolbar from "./components/layout/Toolbar";
 import NavigationDrawer from "./components/layout/NavigationDrawer";
 import Footer from "./components/layout/Footer";
 import AddTodo from "./components/AddTodo";
-import uuid from "uuid"
+import axios from "axios";
 
 export default {
   name: "app",
@@ -34,13 +34,7 @@ export default {
   },
   data() {
     return {
-      todos: [
-        {
-          id: uuid.v4(),
-          title: "A Sample Todo",
-          completed: false
-        },
-      ],
+      todos: [],
       drawerProps: {
         model: false,
         type: "default",
@@ -57,6 +51,12 @@ export default {
     addTodo(newTodo) {
       this.todos = [...this.todos, newTodo];
     }
+  },
+  created() {
+    axios
+      .get("https://jsonplaceholder.typicode.com/todos?_limit=3")
+      .then(res => (this.todos = res.data))
+      .catch(err => console.log(err));
   }
 };
 </script>
