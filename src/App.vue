@@ -1,41 +1,32 @@
 <template>
   <v-app id="app" :dark="dark">
-    <v-navigation-drawer
-      v-model="primaryDrawer.model"
-      :permanent="primaryDrawer.type === 'permanent'"
-      :temporary="primaryDrawer.type === 'temporary'"
-      :clipped="primaryDrawer.clipped"
-      :floating="primaryDrawer.floating"
-      app
-    ></v-navigation-drawer>
-    <v-toolbar :clipped-left="primaryDrawer.clipped" app>
-      <v-toolbar-side-icon
-        v-if="primaryDrawer.type !== 'permanent'"
-        @click.stop="primaryDrawer.model = !primaryDrawer.model"
-      ></v-toolbar-side-icon>
-      <v-toolbar-title>Vuetify</v-toolbar-title>
-    </v-toolbar>
+    <NavigationDrawer v-bind:drawer-props="drawerProps" />
+    <Toolbar v-bind:drawer-props="drawerProps" />
     <v-content>
-      <img alt="Vue logo" src="./assets/logo.png" width="120" class="center" />
+      <img alt="Vue logo" src="./assets/logo.png" width="120" class="my-3 center" />
       <Todos v-bind:todos="todos" v-on:del-todo="deleteTodo" />
       <v-btn @click="dark = !dark">
         Toggle Toolbar Dark
         <v-icon right>favorite</v-icon>
       </v-btn>
     </v-content>
-    <v-footer app>
-      <span class="px-3">&copy; {{ new Date().getFullYear() }}</span>
-    </v-footer>
+    <Footer></Footer>
   </v-app>
 </template>
 
 <script>
-import Todos from "./components/Todos.vue";
+import Todos from "./components/Todos"
+import Toolbar from "./components/layout/Toolbar"
+import NavigationDrawer from "./components/layout/NavigationDrawer"
+import Footer from "./components/layout/Footer"
 
 export default {
   name: "app",
   components: {
-    Todos
+    Todos,
+    Toolbar,
+    NavigationDrawer,
+    Footer,
   },
   data() {
     return {
@@ -56,8 +47,8 @@ export default {
           completed: false
         }
       ],
-      primaryDrawer: {
-        model: null,
+      drawerProps: {
+        model: false,
         type: "default",
         clipped: true,
         floating: false
