@@ -3,7 +3,7 @@
     <h1>
       <input type="checkbox" v-on:change="markComplete" />
       {{ todo.title }}
-      <v-btn fab dark small color="error">
+      <v-btn @click="$emit('del-todo', todo.id)" fab dark small color="error" class="del">
         <v-icon dark>remove</v-icon>
       </v-btn>
     </h1>
