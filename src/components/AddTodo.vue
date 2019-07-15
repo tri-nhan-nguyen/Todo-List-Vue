@@ -1,6 +1,10 @@
 <template>
   <form class="mx-5 px-5 my-3">
-    <v-text-field v-model="title" label="Add a Todo ..." required></v-text-field>
+    <v-text-field
+      v-model="title"
+      label="Add a Todo ..."
+      required
+    ></v-text-field>
     <v-btn @click="add">add</v-btn>
     <v-btn @click="clear">clear</v-btn>
   </form>

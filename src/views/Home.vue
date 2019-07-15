@@ -1,6 +1,11 @@
 <template>
   <v-content id="home">
-    <img alt="Vue logo" src="../assets/logo.png" width="120" class="my-3 center" />
+    <img
+      alt="Vue logo"
+      src="../assets/logo.png"
+      width="120"
+      class="my-3 center"
+    />
     <Todos v-bind:todos="todos" v-on:del-todo="deleteTodo" />
     <v-btn @click="notifyToggleDark">
       Toggle Toolbar Dark
