@@ -1,12 +1,19 @@
 <template>
-  <div class="todo-item" v-bind:class="{'completed':todo.completed}">
-    <h1>
-      <input type="checkbox" v-on:change="markComplete" />
+  <div class="todo-item">
+    <v-checkbox
+      v-on:change="markComplete"
+      color="red darken-1"
+      class="d-inline-block"
+    ></v-checkbox>
+    <h1
+      v-bind:class="{ completed: todo.completed }"
+      class="d-inline-block ma-3"
+    >
       {{ todo.title }}
-      <v-btn @click="$emit('del-todo', todo.id)" fab dark small color="error" class="del">
-        <v-icon dark>remove</v-icon>
-      </v-btn>
     </h1>
+    <v-icon @click="$emit('del-todo', todo.id)" left medium color="red darken-1"
+      >remove_circle</v-icon
+    >
   </div>
 </template>
 
