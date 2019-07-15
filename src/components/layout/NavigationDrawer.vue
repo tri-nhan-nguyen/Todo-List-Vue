@@ -6,7 +6,14 @@
     :clipped="drawerProps.clipped"
     :floating="drawerProps.floating"
     app
-  ></v-navigation-drawer>
+  >
+    <v-btn flat large block>
+      <router-link class="nav-link" to="/">Home</router-link>
+    </v-btn>
+    <v-btn flat large block>
+      <router-link class="nav-link" to="/about">About</router-link>
+    </v-btn>
+  </v-navigation-drawer>
 </template>
 
 <script>
@@ -15,3 +22,9 @@ export default {
   props: ["drawerProps"]
 };
 </script>
+
+<style lang="scss" scoped>
+.nav-link {
+  text-decoration: none;
+}
+</style>
