@@ -7,12 +7,18 @@
     :floating="drawerProps.floating"
     app
   >
-    <v-btn flat large block>
-      <router-link class="nav-link" to="/">Home</router-link>
-    </v-btn>
-    <v-btn flat large block>
-      <router-link class="nav-link" to="/about">About</router-link>
-    </v-btn>
+    <div class="my-5">
+    <router-link class="nav-link" to="/">
+      <v-btn flat large block>
+        Home
+      </v-btn>
+    </router-link>
+    <router-link class="nav-link" to="/about">
+      <v-btn flat large block>
+        About
+      </v-btn>
+    </router-link>
+    </div>
   </v-navigation-drawer>
 </template>
 
@@ -26,5 +32,6 @@ export default {
 <style lang="scss" scoped>
 .nav-link {
   text-decoration: none;
+  margin: 0 3rem;
 }
 </style>
