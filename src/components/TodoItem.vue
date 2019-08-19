@@ -5,12 +5,12 @@
       color="red darken-1"
       class="d-inline-block"
     ></v-checkbox>
-    <h1
+    <h2
       v-bind:class="{ completed: todo.completed }"
       class="d-inline-block ma-3"
     >
       {{ todo.title }}
-    </h1>
+    </h2>
     <v-icon @click="$emit('del-todo', todo.id)" left medium color="red darken-1"
       >remove_circle</v-icon
     >

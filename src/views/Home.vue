@@ -42,12 +42,6 @@ export default {
     notifyToggleDark() {
       this.$emit("dark");
     }
-  },
-  created() {
-    axios
-      .get("https://jsonplaceholder.typicode.com/todos?_limit=3")
-      .then(res => (this.todos = res.data))
-      .catch(err => console.log(err));
   }
 };
 </script>

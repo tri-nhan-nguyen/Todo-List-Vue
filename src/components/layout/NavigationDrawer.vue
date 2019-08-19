@@ -1,6 +1,7 @@
 <template>
   <v-navigation-drawer
     v-model="drawerProps.model"
+    :width=250
     :permanent="drawerProps.type === 'permanent'"
     :temporary="drawerProps.type === 'temporary'"
     :clipped="drawerProps.clipped"

@@ -1,5 +1,5 @@
 <template>
-  <v-toolbar :clipped-left="drawerProps.clipped" app>
+  <v-toolbar :clipped-left="drawerProps.clipped" app class="elevation-0">
     <v-toolbar-side-icon
       v-if="drawerProps.type !== 'permanent'"
       @click.stop="drawerProps.model = !drawerProps.model"
