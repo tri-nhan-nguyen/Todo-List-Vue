@@ -18,7 +18,6 @@
 <script>
 import Todos from "../components/Todos";
 import AddTodo from "../components/AddTodo";
-import axios from "axios";
 
 export default {
   name: "Home",
