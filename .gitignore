@@ -22,3 +22,6 @@ yarn-error.log*
 
 # Personal ignorance
 package-lock.json
+
+# Cache files
+.firebase
