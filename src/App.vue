@@ -8,9 +8,9 @@
 </template>
 
 <script>
-import Toolbar from "./components/layout/Toolbar";
-import NavigationDrawer from "./components/layout/NavigationDrawer";
-import Footer from "./components/layout/Footer";
+import Toolbar from "@/components/layout/Toolbar";
+import NavigationDrawer from "@/components/layout/NavigationDrawer";
+import Footer from "@/components/layout/Footer";
 
 export default {
   name: "app",

@@ -2,7 +2,7 @@
   <v-content id="home">
     <img
       alt="Vue logo"
-      src="../assets/logo.png"
+      src="@/assets/logo.png"
       width="120"
       class="my-3 center"
     />
@@ -16,8 +16,8 @@
 </template>
 
 <script>
-import Todos from "../components/Todos";
-import AddTodo from "../components/AddTodo";
+import Todos from "@/components/Todos";
+import AddTodo from "@/components/AddTodo";
 
 export default {
   name: "Home",
