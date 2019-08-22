@@ -1,8 +1,8 @@
 <template>
   <v-app id="app" :dark="dark">
-    <NavigationDrawer v-bind:drawer-props="drawerProps" />
-    <Toolbar v-bind:drawer-props="drawerProps" />
-    <router-view v-on:dark="toggleDark" />
+    <NavigationDrawer :drawer-props="drawerProps" />
+    <Toolbar :drawer-props="drawerProps" />
+    <router-view @dark="toggleDark" />
     <Footer></Footer>
   </v-app>
 </template>

@@ -1,12 +1,12 @@
 <template>
   <div class="todo-item">
     <v-checkbox
-      v-on:change="markComplete"
+      @change="markComplete"
       color="red darken-1"
       class="d-inline-block"
     ></v-checkbox>
     <h2
-      v-bind:class="{ completed: todo.completed }"
+      :class="{ completed: todo.completed }"
       class="d-inline-block ma-3"
     >
       {{ todo.title }}

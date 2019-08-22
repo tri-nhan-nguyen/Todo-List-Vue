@@ -6,12 +6,12 @@
       width="120"
       class="my-3 center"
     />
-    <Todos v-bind:todos="todos" v-on:del-todo="deleteTodo" />
+    <Todos :todos="todos" @del-todo="deleteTodo" />
     <v-btn @click="notifyToggleDark">
       Toggle Toolbar Dark
       <v-icon right>favorite</v-icon>
     </v-btn>
-    <AddTodo v-on:add-todo="addTodo"></AddTodo>
+    <AddTodo @add-todo="addTodo"></AddTodo>
   </v-content>
 </template>
 
