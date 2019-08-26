@@ -1,7 +1,7 @@
 <template>
   <v-navigation-drawer
     v-model="drawerProps.model"
-    :width=250
+    :width="70"
     :permanent="drawerProps.type === 'permanent'"
     :temporary="drawerProps.type === 'temporary'"
     :clipped="drawerProps.clipped"
@@ -9,16 +9,20 @@
     app
   >
     <div class="my-5">
-    <router-link class="nav-link" to="/">
-      <v-btn flat large block>
-        Home
-      </v-btn>
-    </router-link>
-    <router-link class="nav-link" to="/about">
-      <v-btn flat large block>
-        About
-      </v-btn>
-    </router-link>
+      <router-link class="nav-link my-3" to="/">
+        <img
+          alt="Vue logo"
+          src="@/assets/logo.png"
+          width="30"
+        />
+      </router-link>
+      <router-link class="nav-link my-3" to="/about">
+        <img
+          alt="Vue logo"
+          src="@/assets/logo.png"
+          width="30"
+        />
+      </router-link>
     </div>
   </v-navigation-drawer>
 </template>
@@ -33,6 +37,6 @@ export default {
 <style lang="scss" scoped>
 .nav-link {
   text-decoration: none;
-  margin: 0 3rem;
+  display: block;
 }
 </style>
