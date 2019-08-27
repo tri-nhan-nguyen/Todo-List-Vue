@@ -1,5 +1,5 @@
 <template>
-  <v-content id="home">
+  <v-content id="home-page">
     <img
       alt="Vue logo"
       src="@/assets/logo.png"
@@ -25,7 +25,7 @@ import AddTodo from "@/components/AddTodo";
 import db from "@/plugins/firebase";
 
 export default {
-  name: "Home",
+  name: "HomePage",
   props: ["dark"],
   components: {
     Todos,
