@@ -11,7 +11,8 @@
             label="Username"
             name="login"
             prepend-icon="person"
-            type="text"
+            type="email"
+            v-model="email"
           ></v-text-field>
 
           <v-text-field
@@ -20,23 +21,43 @@
             name="password"
             prepend-icon="lock"
             type="password"
+            v-model="password"
           ></v-text-field>
         </v-form>
       </v-card-text>
-      <v-btn class="login-btn" color="primary">Login</v-btn>
+      <v-btn class="login-btn" color="primary" @click="login">Login</v-btn>
     </v-card>
   </v-content>
 </template>
 
 <script>
+import firebase from "firebase";
+
 export default {
   name: "LoginPage",
   props: {
     source: String
   },
   data: () => ({
-    drawer: null
-  })
+    drawer: null,
+    email: "",
+    password: ""
+  }),
+  methods: {
+    login() {
+      firebase
+        .auth()
+        .signInWithEmailAndPassword(this.email, this.password)
+        .then(
+          function(user) {
+            alert("Success");
+          },
+          function(err) {
+            alert(err.message);
+          }
+        );
+    }
+  }
 };
 </script>
 

@@ -11,7 +11,8 @@
             label="Username"
             name="sign-up"
             prepend-icon="person"
-            type="text"
+            type="email"
+            v-model="email"
           ></v-text-field>
 
           <v-text-field
@@ -20,23 +21,43 @@
             name="password"
             prepend-icon="lock"
             type="password"
+            v-model="password"
           ></v-text-field>
         </v-form>
       </v-card-text>
-      <v-btn color="primary">Sign Up</v-btn>
+      <v-btn color="primary" @click="signUp">Sign Up</v-btn>
     </v-card>
   </v-content>
 </template>
 
 <script>
+import firebase from "firebase";
+
 export default {
   name: "SignUpPage",
   props: {
     source: String
   },
   data: () => ({
-    drawer: null
-  })
+    drawer: null,
+    email: "",
+    password: ""
+  }),
+  methods: {
+    signUp() {
+      firebase
+        .auth()
+        .createUserWithEmailAndPassword(this.email, this.password)
+        .then(
+          function(user) {
+            alert("Your account has been created!");
+          },
+          function(err) {
+            alert("Oops." + err.message);
+          }
+        );
+    }
+  }
 };
 </script>
 

@@ -23,6 +23,20 @@
           width="30"
         />
       </router-link>
+      <router-link class="nav-link my-3" to="/login">
+        <img
+          alt="Vue logo"
+          src="@/assets/logo.png"
+          width="30"
+        />
+      </router-link>
+      <router-link class="nav-link my-3" to="/sign-up">
+        <img
+          alt="Vue logo"
+          src="@/assets/logo.png"
+          width="30"
+        />
+      </router-link>
     </div>
   </v-navigation-drawer>
 </template>
