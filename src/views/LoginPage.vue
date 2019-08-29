@@ -48,14 +48,9 @@ export default {
       firebase
         .auth()
         .signInWithEmailAndPassword(this.email, this.password)
-        .then(
-          function(user) {
-            alert("Success");
-          },
-          function(err) {
-            alert(err.message);
-          }
-        );
+        .catch(err => {
+          alert(err.code + ":" + err.message);
+        });
     }
   }
 };

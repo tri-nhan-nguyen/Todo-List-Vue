@@ -48,14 +48,9 @@ export default {
       firebase
         .auth()
         .createUserWithEmailAndPassword(this.email, this.password)
-        .then(
-          function(user) {
-            alert("Your account has been created!");
-          },
-          function(err) {
-            alert("Oops." + err.message);
-          }
-        );
+        .catch((err) => {
+          alert(err.code + ":" + err.message);
+        });
     }
   }
 };
