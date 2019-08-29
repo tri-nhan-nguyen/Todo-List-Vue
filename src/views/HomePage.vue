@@ -15,6 +15,9 @@
       Toggle Toolbar Dark
       <v-icon right>favorite</v-icon>
     </v-btn>
+    <v-btn @click="signOut">
+      Sign Out
+    </v-btn>
     <AddTodo @add-todo="addTodo"></AddTodo>
   </v-content>
 </template>
@@ -23,6 +26,7 @@
 import Todos from "@/components/Todos";
 import AddTodo from "@/components/AddTodo";
 import db from "@/plugins/firebase";
+import firebase from "firebase";
 
 export default {
   name: "HomePage",
@@ -59,6 +63,17 @@ export default {
     },
     notifyToggleDark() {
       this.$emit("dark");
+    },
+    signOut() {
+      firebase
+        .auth()
+        .signOut()
+        .then(() => {
+          this.$router.replace("login");
+        })
+        .catch(err => {
+          alert(err.code + ":" + err.message);
+        });
     }
   }
 };
