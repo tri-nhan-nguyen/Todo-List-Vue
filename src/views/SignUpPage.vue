@@ -48,7 +48,10 @@ export default {
       firebase
         .auth()
         .createUserWithEmailAndPassword(this.email, this.password)
-        .catch((err) => {
+        .then(() => {
+          this.$router.replace("home-page");
+        })
+        .catch(err => {
           alert(err.code + ":" + err.message);
         });
     }
