@@ -25,3 +25,6 @@ package-lock.json
 
 # Cache files
 .firebase
+
+# Api keys
+src/plugins/firebase-config.js
