@@ -28,3 +28,6 @@ package-lock.json
 
 # Api keys
 src/plugins/firebase-config.js
+
+# Random files
+.Rhistory
